@@ -1,6 +1,6 @@
 const Notification = require('../models/Notification');
 
-// Fetch all notifications for the logged-in user
+
 exports.getNotifications = async (req, res) => {
   try {
     const notifications = await Notification.find({ user: req.user.id }).sort({ createdAt: -1 });
